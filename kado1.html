@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Special Day, sayang🤍</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Poppins:wght@300;400;500;600&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Poppins, sans-serif;
+        background: #10051e;
+        color: #fff;
+        overflow-x: hidden;
+      }
+      body:before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -3;
+        background:
+          radial-gradient(
+            circle at 50% 38%,
+            rgba(138, 61, 202, 0.55),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at 15% 85%,
+            rgba(98, 35, 155, 0.28),
+            transparent 25%
+          ),
+          linear-gradient(135deg, #08030f, #210b3a 48%, #0c0316);
+      }
+      body:after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+        background-image:
+          radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.7) 1px,
+            transparent 1px
+          ),
+          radial-gradient(
+            circle,
+            rgba(255, 132, 205, 0.45) 1px,
+            transparent 1px
+          );
+        background-size:
+          85px 85px,
+          125px 125px;
+        background-position:
+          10px 20px,
+          50px 60px;
+        opacity: 0.12;
+      }
+      button {
+        font-family: inherit;
+      }
+      .page {
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
+      }
+      .content {
+        width: min(900px, 90%);
+        margin: auto;
+        position: relative;
+        z-index: 4;
+      }
+      .serif {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+      }
+      .eyebrow {
+        font-size: 9px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #d8a9f4;
+        margin-bottom: 14px;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+      }
+      h1 {
+        font-size: clamp(52px, 9vw, 105px);
+        line-height: 0.82;
+      }
+      h2 {
+        font-size: clamp(43px, 7vw, 70px);
+        line-height: 0.9;
+      }
+      p {
+        font-size: 11px;
+        line-height: 1.9;
+        color: #d6c9de;
+      }
+
+      /* floating hearts */
+      .heart {
+        position: absolute;
+        color: #ff80bd;
+        opacity: 0.75;
+        pointer-events: none;
+        animation: rise linear infinite;
+        text-shadow: 0 0 12px #ff4fac;
+      }
+      .h1 {
+        left: 8%;
+        bottom: 8%;
+        font-size: 22px;
+        animation-duration: 8s;
+      }
+      .h2 {
+        left: 17%;
+        bottom: -4%;
+        font-size: 13px;
+        animation-duration: 10s;
+        animation-delay: 2s;
+      }
+      .h3 {
+        right: 10%;
+        bottom: 2%;
+        font-size: 28px;
+        animation-duration: 9s;
+        animation-delay: 1s;
+      }
+      .h4 {
+        right: 20%;
+        bottom: -6%;
+        font-size: 14px;
+        animation-duration: 11s;
+        animation-delay: 3s;
+      }
+      .h5 {
+        left: 50%;
+        bottom: -5%;
+        font-size: 12px;
+        animation-duration: 7s;
+        animation-delay: 4s;
+      }
+      .h6 {
+        right: 38%;
+        bottom: 0%;
+        font-size: 20px;
+        animation-duration: 12s;
+        animation-delay: 1s;
+      }
+
+      @keyframes rise {
+        0% {
+          transform: translateY(20px) scale(0.6);
+          opacity: 0;
+        }
+        15% {
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(-110vh) rotate(25deg) scale(1.2);
+          opacity: 0;
+        }
+      }
+      @keyframes pulse {
+        50% {
+          transform: scale(1.08);
+        }
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(25px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* opening */
+      #opening {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:
+          radial-gradient(
+            circle at center,
+            rgba(129, 55, 193, 0.6),
+            transparent 32%
+          ),
+          #09030f;
+        transition: 1s ease;
+      }
+      .opening-inner {
+        text-align: center;
+        width: min(520px, 88%);
+      }
+      .opening-inner .tiny {
+        font-size: 9px;
+        letter-spacing: 4px;
+        color: #d3a4ee;
+        text-transform: uppercase;
+      }
+      .opening-inner h1 {
+        margin: 16px 0;
+        font-size: clamp(50px, 12vw, 90px);
+        color: #fff;
+      }
+      .opening-inner p {
+        max-width: 430px;
+        margin: 0 auto 25px;
+      }
+      .gift {
+        width: 70px;
+        height: 60px;
+        margin: 0 auto 18px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 43px;
+        animation: pulse 1.7s infinite;
+      }
+      .open-btn,
+      .small-btn {
+        border: 1px solid rgba(238, 174, 255, 0.45);
+        background: rgba(148, 73, 201, 0.2);
+        color: #fff;
+        padding: 11px 24px;
+        border-radius: 30px;
+        font-size: 10px;
+        letter-spacing: 1px;
+        transition: 0.3s;
+        box-shadow: 0 0 25px rgba(165, 71, 220, 0.18);
+      }
+      .open-btn:hover,
+      .small-btn:hover {
+        background: rgba(180, 91, 235, 0.35);
+        transform: translateY(-2px);
+      }
+
+      /* hero */
+      .hero {
+        display: flex;
+        align-items: center;
+        text-align: center;
+      }
+      .hero .content {
+        animation: fadeUp 1.2s ease;
+      }
+      .hero .sub {
+        font-size: 9px;
+        letter-spacing: 2px;
+        color: #d2b6df;
+        margin: 22px 0;
+      }
+      .hero .line {
+        width: 100px;
+        height: 1px;
+        background: #d795ef;
+        margin: 18px auto;
+        opacity: 0.6;
+      }
+      .hero h1 {
+        color: #fff;
+        text-shadow: 0 0 30px rgba(208, 128, 255, 0.4);
+      }
+      .hero h1 span {
+        color: #d991ff;
+      }
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 9px;
+        margin: 24px 0;
+      }
+      .time {
+        min-width: 58px;
+        padding: 9px 8px;
+        border: 1px solid rgba(220, 166, 247, 0.28);
+        background: rgba(255, 255, 255, 0.045);
+        backdrop-filter: blur(8px);
+        border-radius: 7px;
+      }
+      .time b {
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .time small {
+        font-size: 7px;
+        color: #bcaac5;
+        letter-spacing: 1px;
+      }
+      .hero-note {
+        font-size: 8px;
+        color: #bca9b8;
+      }
+
+      /* side polaroids */
+      .polaroid {
+        position: absolute;
+        width: 105px;
+        padding: 7px 7px 20px;
+        background: #fff;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+        z-index: 3;
+        animation: sway 5s ease-in-out infinite;
+      }
+      .polaroid img {
+        width: 100%;
+        height: 105px;
+        object-fit: cover;
+        display: block;
+      }
+      .polaroid.left1 {
+        left: 5%;
+        top: 20%;
+        transform: rotate(-8deg);
+      }
+      .polaroid.left2 {
+        left: 8%;
+        top: 52%;
+        transform: rotate(7deg);
+        animation-delay: 1s;
+      }
+      .polaroid.right1 {
+        right: 5%;
+        top: 25%;
+        transform: rotate(8deg);
+        animation-delay: 1.5s;
+      }
+      .polaroid.right2 {
+        right: 8%;
+        top: 58%;
+        transform: rotate(-7deg);
+        animation-delay: 2s;
+      }
+      @keyframes sway {
+        0%,
+        100% {
+          translate: 0 0;
+        }
+        50% {
+          translate: 0 -8px;
+        }
+      }
+
+      /* generic sections */
+      .section {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding: 110px 0;
+      }
+      .card {
+        width: min(650px, 100%);
+        margin: 28px auto 0;
+        padding: 32px 35px;
+        background: rgba(255, 255, 255, 0.065);
+        border: 1px solid rgba(222, 167, 250, 0.25);
+        border-radius: 14px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      }
+      .card p {
+        font-size: 11px;
+      }
+      .signature {
+        margin-top: 18px;
+        color: #f2a8d2;
+        font-family: "Cormorant Garamond";
+        font-style: italic;
+        font-size: 18px;
+      }
+
+      /* gallery */
+      .gallery-section {
+        padding: 110px 0;
+      }
+      .gallery-title {
+        text-align: center;
+        margin-bottom: 38px;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .gallery-item {
+        background: #fff;
+        padding: 7px 7px 26px;
+        position: relative;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+        cursor: pointer;
+        transition: 0.35s;
+      }
+      .gallery-item:nth-child(2n) {
+        transform: rotate(2deg);
+      }
+      .gallery-item:nth-child(3n) {
+        transform: rotate(-2deg);
+      }
+      .gallery-item:hover {
+        transform: translateY(-8px) rotate(0deg) scale(1.02);
+        z-index: 3;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        display: block;
+      }
+      .gallery-item span {
+        position: absolute;
+        bottom: 6px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #4b294e;
+        font-family: "Cormorant Garamond";
+        font-style: italic;
+        font-size: 13px;
+      }
+
+      /* moment */
+      .moment-photo {
+        width: min(520px, 100%);
+        margin: 28px auto 22px;
+        padding: 10px 10px 35px;
+        background: #fff;
+        transform: rotate(-1deg);
+        box-shadow: 0 20px 55px rgba(0, 0, 0, 0.4);
+      }
+
+      .moment-photo img,
+      .moment-photo video {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .moment-photo .caption {
+        color: #49274c;
+        font-family: "Cormorant Garamond";
+        font-style: italic;
+        margin-top: 7px;
+      }
+
+      /* final */
+      .final {
+        text-align: center;
+        display: flex;
+        align-items: center;
+      }
+      .final h2 {
+        font-size: clamp(55px, 10vw, 100px);
+        color: #fff;
+        text-shadow: 0 0 35px rgba(213, 131, 255, 0.45);
+      }
+      .final .big-heart {
+        font-size: 40px;
+        color: #ff80bd;
+        animation: pulse 1.4s infinite;
+      }
+      .final .message {
+        max-width: 590px;
+        margin: 18px auto;
+      }
+      .final .from {
+        color: #f1a9d4;
+        font-family: "Cormorant Garamond";
+        font-style: italic;
+        font-size: 21px;
+        margin: 15px;
+      }
+
+      .music {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 2000;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: #fff;
+        background: rgba(117, 47, 160, 0.5);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+        cursor: pointer;
+      }
+      .music.playing {
+        animation: spin 5s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* lightbox */
+      #lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(5, 1, 10, 0.94);
+        z-index: 9998;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      #lightbox.show {
+        display: flex;
+      }
+      #lightbox img {
+        max-width: 90%;
+        max-height: 85vh;
+        object-fit: contain;
+        border: 8px solid #fff;
+        box-shadow: 0 0 60px rgba(178, 83, 239, 0.35);
+      }
+      .close {
+        position: absolute;
+        right: 22px;
+        top: 15px;
+        color: #fff;
+        background: none;
+        font-size: 38px;
+        cursor: pointer;
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px;
+        font-size: 8px;
+        letter-spacing: 2px;
+        color: #76617e;
+      }
+
+      /* responsive */
+      @media (max-width: 760px) {
+        .polaroid {
+          width: 75px;
+          padding: 5px 5px 15px;
+        }
+        .polaroid img {
+          height: 75px;
+        }
+        .polaroid.left1 {
+          left: 1%;
+          top: 18%;
+        }
+        .polaroid.left2 {
+          left: 2%;
+          top: 68%;
+        }
+        .polaroid.right1 {
+          right: 1%;
+          top: 23%;
+        }
+        .polaroid.right2 {
+          right: 2%;
+          top: 72%;
+        }
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
+        .gallery-item img {
+          height: 155px;
+        }
+        .card {
+          padding: 25px 20px;
+        }
+      }
+      @media (max-width: 470px) {
+        .polaroid {
+          width: 62px;
+        }
+        .polaroid img {
+          height: 62px;
+        }
+        .gallery {
+          grid-template-columns: 1fr 1fr;
+        }
+        .gallery-item img {
+          height: 135px;
+        }
+        .countdown {
+          gap: 5px;
+        }
+        .time {
+          min-width: 50px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- OPENING -->
+    <div id="opening">
+      <div class="opening-inner">
+        <div class="tiny">a little surprise for you</div>
+        <div class="gift">🎁</div>
+        <h1>Your Special Day</h1>
+        <p>
+          Ada sesuatu yang dibuat khusus untuk hari spesialmu. Nyalakan suara,
+          lalu buka perlahan-lahan ya.
+        </p>
+        <button class="open-btn" onclick="openSurprise()">
+          OPEN MY SURPRISE ✨
+        </button>
+      </div>
+    </div>
+
+    <audio id="music" preload="auto">
+      <source src="lagu.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button class="music" id="musicBtn" onclick="toggleMusic()">♫</button>
+
+    <!-- HERO -->
+    <section class="page hero">
+      <span class="heart h1">♡</span><span class="heart h2">♥</span>
+      <span class="heart h3">♡</span><span class="heart h4">♥</span>
+      <span class="heart h5">♡</span><span class="heart h6">♥</span>
+
+      <div class="polaroid left1">
+        <img src="mykisah/foto1.jpg" alt="" />
+      </div>
+
+      <div class="polaroid left2">
+        <img src="mykisah/foto2.jpg" alt="" />
+      </div>
+
+      <div class="polaroid right1">
+        <img src="mykisah/foto3.jpg" alt="" />
+      </div>
+
+      <div class="polaroid right2">
+        <img src="mykisah/foto1.jpg" alt="" />
+      </div>
+
+      <div class="content">
+        <div class="eyebrow">something special is coming</div>
+
+        <h1>Your <span>Special</span><br />Day</h1>
+
+        <div class="line"></div>
+
+        <div class="sub">SEBUAH HAL KECIL UNTUK HARI YANG BESAR</div>
+
+        <div class="countdown">
+          <div class="time">
+            <b id="days">00</b>
+            <small>DAYS</small>
+          </div>
+
+          <div class="time">
+            <b id="hours">00</b>
+            <small>HOURS</small>
+          </div>
+
+          <div class="time">
+            <b id="mins">00</b>
+            <small>MINUTES</small>
+          </div>
+
+          <div class="time">
+            <b id="secs">00</b>
+            <small>SECONDS</small>
+          </div>
+        </div>
+
+        <button
+          class="small-btn"
+          onclick="document.getElementById('birthday').scrollIntoView()"
+        >
+          THIS IS FOR YOU ♡
+        </button>
+      </div>
+    </section>
+
+    <!-- BIRTHDAY -->
+    <section class="page section" id="birthday">
+      <span class="heart h2">♡</span>
+      <span class="heart h3">♥</span>
+
+      <div class="content">
+        <div class="eyebrow">today is all about you</div>
+
+        <h2>Happy Birthday</h2>
+
+        <div class="card">
+          <p>
+            🤍Di umur yang baru ini, aku cuma mau doain semoga semua hal baik
+            selalu datang ke hidup kamu. semoga sehat selalu, Panjang umur, di
+            permudahkan segala urusannya, dan semua impian kamu bisa tercapai
+            satu persatu, Tetap jadi pribadi yang kuat, baik, dan hebat seperti
+            sekarang ya, sayang.🤍
+
+            <br /><br />
+
+            Sekali lagi, selamat ulang tahun ya sayangkuu. semoga hari ini penuh
+            kebahagiaan dan tahun ini menjadi tahun terbaik untuk kamuu..
+          </p>
+
+          <div class="signature">I love you, today, tomorrow, and always ♡</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOMENT -->
+    <section class="page section">
+      <span class="heart h1">♥</span>
+      <span class="heart h4">♡</span>
+
+      <div class="content">
+        <div class="eyebrow">a moment for you</div>
+
+        <h2>One Special Moment</h2>
+
+        <div class="moment-photo">
+          <!-- VIDEO AUTO PLAY, MUTED, LOOP -->
+          <video autoplay muted loop playsinline>
+            <source
+              src="roblox/Screen Recording 2026-08-18 033117.mp4"
+              type="video/mp4"
+            />
+            Browser kamu tidak mendukung video.
+          </video>
+
+          <div class="caption">one of the moments I want to remember</div>
+        </div>
+
+        <button
+          class="small-btn"
+          onclick="document.getElementById('gallery').scrollIntoView()"
+        >
+          VIEW MORE ♡
+        </button>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="page gallery-section" id="gallery">
+      <div class="content">
+        <div class="gallery-title">
+          <div class="eyebrow">little memories</div>
+          <h2>Our Moments</h2>
+          <p>Setiap foto menyimpan cerita kecil yang berharga.</p>
+        </div>
+
+        <div class="gallery">
+          <div class="gallery-item" onclick="openPhoto('foto1.jpg')">
+            <img src="roblox/foto5.jpg" />
+            <span>🎮 Our First Memory in Roblox ♡</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto2.jpg')">
+            <img src="mykisah/foto10.jpg" />
+            <span>✨ Your Smile ♡</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto3.jpg')">
+            <img src="mykisah/foto11.jpg" />
+            <span>🏔️ You, Up There</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto4.jpg')">
+            <img src="mykisah/foto12.jpg" />
+            <span>🌊 A Day by the Sea</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto5.jpg')">
+            <img src="mykisah/foto2.jpg" />
+            <span>💕 My Favorite Photo ♡</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto6.jpg')">
+            <img src="mykisah/foto13.jpg" />
+            <span>📸 A Little Moment</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto7.jpg')">
+            <img src="mykisah/foto14.jpg" />
+            <span>🌙 Even From Far Away</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto8.jpg')">
+            <img src="mykisah/foto15.jpg" />
+            <span>🫶 My Favorite Person</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto9.jpg')">
+            <img src="roblox/foto16.jpg" />
+            <span>🎮 Our Little Adventure</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto10.jpg')">
+            <img src="mykisah/foto6.jpg" />
+            <span>☀️ You Had a Beautiful Day</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto11.jpg')">
+            <img src="mykisah/foto17.jpg" />
+            <span>💭 Wish I Was There</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto12.jpg')">
+            <img src="mykisah/foto19.jpg" />
+            <span>❤️ A Piece of You</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto13.jpg')">
+            <img src="roblox/foto20.jpg" />
+            <span>🌷 More Memories to Make</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto14.jpg')">
+            <img src="mykisah/foto18.jpg" />
+            <span>🥹 Until We Meet Again</span>
+          </div>
+
+          <div class="gallery-item" onclick="openPhoto('foto15.jpg')">
+            <img src="mykisah/foto7.jpg" />
+            <span>💌 And Many More ♡</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL MESSAGE -->
+    <section class="page final">
+      <span class="heart h1">♡</span>
+      <span class="heart h2">♥</span>
+      <span class="heart h3">♡</span>
+      <span class="heart h5">♥</span>
+
+      <div class="content">
+        <div class="big-heart">♥</div>
+
+        <div class="eyebrow">one last thing</div>
+
+        <h2>
+          You Mean<br />
+          The World To Me
+        </h2>
+
+        <p class="message">
+          Thank you for being part of my life. I hope this little gift can make
+          your special day even more beautiful.
+
+          <br /><br />
+
+          Sekali lagi, selamat ulang tahun yahh. Semoga hari ini dan hari-hari
+          setelahnya selalu terasa spesial. ♡
+        </p>
+
+        <div class="from">Forever yours ♡</div>
+
+        <button
+          class="small-btn"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        >
+          BACK TO THE BEGINNING
+        </button>
+      </div>
+    </section>
+
+    <footer>made with love ♡</footer>
+
+    <div id="lightbox" onclick="closePhoto()">
+      <button class="close" onclick="closePhoto()">×</button>
+      <img id="lightboxImg" src="" alt="Photo" />
+    </div>
+
+    <script>
+      const opening = document.getElementById("opening");
+      const music = document.getElementById("music");
+      const musicBtn = document.getElementById("musicBtn");
+
+      function openSurprise() {
+        opening.style.opacity = "0";
+
+        setTimeout(() => {
+          opening.style.display = "none";
+        }, 1000);
+
+        music.currentTime = 0;
+
+        music
+          .play()
+          .then(() => {
+            musicBtn.classList.add("playing");
+            musicBtn.textContent = "♫";
+          })
+          .catch(() => {
+            musicBtn.textContent = "▶";
+          });
+      }
+
+      function toggleMusic() {
+        if (music.paused) {
+          if (music.ended) music.currentTime = 0;
+
+          music.play();
+
+          musicBtn.classList.add("playing");
+          musicBtn.textContent = "♫";
+        } else {
+          music.pause();
+
+          musicBtn.classList.remove("playing");
+          musicBtn.textContent = "▶";
+        }
+      }
+
+      music.addEventListener("ended", () => {
+        musicBtn.classList.remove("playing");
+        musicBtn.textContent = "↻";
+      });
+
+      /* Countdown sampai 29 November 2026 */
+
+      const targetDate = new Date(2026, 10, 29, 0, 0, 0);
+
+      function updateCountdown() {
+        const diff = Math.max(0, targetDate - new Date());
+
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+
+        document.getElementById("days").textContent = String(d).padStart(
+          2,
+          "0",
+        );
+
+        document.getElementById("hours").textContent = String(h).padStart(
+          2,
+          "0",
+        );
+
+        document.getElementById("mins").textContent = String(m).padStart(
+          2,
+          "0",
+        );
+
+        document.getElementById("secs").textContent = String(s).padStart(
+          2,
+          "0",
+        );
+      }
+
+      setInterval(updateCountdown, 1000);
+
+      updateCountdown();
+
+      /* Gallery Lightbox */
+
+      function openPhoto(src) {
+        document.getElementById("lightboxImg").src = src;
+
+        document.getElementById("lightbox").classList.add("show");
+      }
+
+      function closePhoto() {
+        document.getElementById("lightbox").classList.remove("show");
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closePhoto();
+      });
+    </script>
+  </body>
+</html>
